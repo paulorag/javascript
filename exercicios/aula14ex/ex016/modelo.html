@@ -5,20 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo</title>
+    <title>Vamos contar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <h1>Título</h1>
+        <h1>Vamos contar</h1>
     </header>
     <main>
         <div>
-
+            <p>Inicio: <input type="number" name="numIni" id="numIni"></p>
+            <p>Fim: <input type="number" name="numFim" id="numFim"></p>
+            <p>Passo: <input type="number" name="passo" id="passo"></p>
+            <p><input type="button" value="Contar" onclick="contar()"></p>
         </div>
         <div id="res">
-
+            Preparando contagem...
         </div>
     </main>
     <footer>
