@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio012</title>
+    <style>
+        input {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Preço mudou</h1>
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+    <script>
+        function calcular() {
+            let precoAnti = parseFloat(prompt('Qual era o preço anterior do produto?'));
+            let precoAtual = parseFloat(prompt('Qual é o preço atual do produto?'));
+            let diferenca = precoAtual - precoAnti;
+            let percent = (diferenca / precoAnti) * 100;
+            let res = document.querySelector('div#res');
+
+            res.innerHTML = `<p><strong>Analisando os valores informados.</strong></p>`;
+            res.innerHTML += `<p>O produto custava R$${precoAnti} e agora custa R$${precoAtual}.</p>`;
+            if (precoAtual > precoAnti) {
+                res.innerHTML += `<p>Hoje o produto está mais caro.</p>`;
+                res.innerHTML += `<p>O preço subiu R$${(diferenca).toFixed(2)} em relação ao preço anterior.</p>`;
+                res.innerHTML += `<p>Uma variação de ${(percent).toFixed(1)}% pra cima.</p>`;
+            } else {
+                res.innerHTML += `<p>Hoje o produto está mais barato</p>`;
+                res.innerHTML += `<p>O preço abaixou R$${(diferenca).toFixed(2)} em relação ao preço anterior.</p>`;
+                res.innerHTML += `<p>Uma variação de ${(percent).toFixed(1)}% pra baixo.</p>`;
+            }
+        }
+    </script>
+</body>
+
+</html>

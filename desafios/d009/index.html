@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio009</title>
+    <style>
+        input {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Reajuste Salarial</h1>
+    <input type="button" value="Reajustar Salario" onclick="calcular()">
+    <div id="res"></div>
+    <script>
+        function calcular() {
+            var nome = prompt('Qual é o nome do funcionario?');
+            var salario = parseFloat(prompt(`Qual é o Salario de ${nome}?`));
+            var reajuste = parseFloat(prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`));
+            var porcent = reajuste / 100;
+            var aumento = salario * porcent;
+            var res = document.querySelector('div#res');
+            res.innerHTML = `<p><strong>${nome} recebeu um aumento salarial!</strong></p>`;
+            res.innerHTML += `<p>O sálario atual era ${salario}</p>`;
+            res.innerHTML += `<p>Com o aumento de ${reajuste}%, o salario vai aumentar R$ ${aumento.toFixed(2)} no próximo mês.</p>`;
+            res.innerHTML += `<p>E a partir daí, ${nome} vai passar a ganhar R$ ${(salario + aumento).toFixed(2)}.</p>`;
+        }
+    </script>
+</body>
+
+</html>

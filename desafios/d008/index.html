@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio008</title>
+    <style>
+        input {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calcular Desconto</h1>
+    <input type="button" value="Desconto de 10%" onclick="calcular()">
+    <div id="res"></div>
+    <script>
+        function calcular() {
+            var prod = prompt('Qual é o produto que você está comprando?');
+            var preco = parseFloat(prompt(`Qual é o preço de ${prod}?`));
+            var desc = preco * (10 / 100);
+            var res = document.querySelector('div#res');
+            res.innerHTML = `<p><strong>Calculando desconde de 10% para ${prod}.</strong></p>`;
+            res.innerHTML += `<p>O preço original  era R$${preco}.</p>`;
+            res.innerHTML += `<p>Você acaba de ganhar R$${desc.toFixed(2)} de desconto (-10%)</p>`;
+            res.innerHTML += `<p>No fim, você vai pagar R$${(preco - desc).toFixed(2)} no produto ${prod}.</p >`;
+        }
+    </script>
+</body>
+
+</html>

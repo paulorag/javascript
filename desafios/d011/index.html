@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio011</title>
+    <style>
+        input {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ano Bissexto</h1>
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+    <script>
+        function calcular() {
+            let ano = parseInt(prompt('Qual é o ano que você quer verificar?'));
+            let res = document.querySelector('div#res');
+
+            res.innerHTML = `<p><strong>Analisando o ano ${ano}.</strong></p>`;
+
+            if ((ano % 400 == 0) || (ano % 4 == 0) && (ano % 100 != 0)) {
+                res.innerHTML += `<p>O ano de ${ano} é Bissexto</p>`;
+            } else {
+                res.innerHTML += `<p>O ano de ${ano} não é Bissexto</p>`;
+            }
+        }
+    </script>
+</body>
+
+</html>
